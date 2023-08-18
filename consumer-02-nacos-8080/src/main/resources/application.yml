@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: nacos-consumer
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8849
+        username: nacos
+        password: nacos
+        group: MY+GROUP
+        namespace: 67a6b3bf-fd2b-4fe1-b025-320a47cc1b99

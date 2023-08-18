@@ -1,0 +1,45 @@
+server:
+  port: 8081
+
+spring:
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    # ???????????
+    hibernate:
+      ddl-auto: none
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://rm-uf6orsii83i76s06tco.mysql.rds.aliyuncs.com:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 84387882Wer#
+
+  # 微服务名称
+  application:
+    name: nacos-provider
+
+  # 服务注册中心地址
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8849
+        username: nacos
+        password: nacos
+        #        enabled: false # 关闭nacos注册中心
+        #        ephemeral: false
+
+logging:
+  pattern:
+    console: level-%level %msg%n
+    # ??spring boot??????????
+  level:
+    root: info
+    # ??hibernate????????
+    org.hibernate: info
+    # ??????????????
+    com.zpcao: debug
+    # ? show-sql?true???SQL???????
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+    # ? show-sql?true???????
+    org.hibernate.type.descriptor.sql.BasicExtractor: trace
